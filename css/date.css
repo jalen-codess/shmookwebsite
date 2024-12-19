@@ -1,0 +1,77 @@
+body {
+    text-align: center;
+    margin-top: 30px;
+    font-family: "Courier";
+    background-color: #5ac186;
+    color: #df4646;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffe3e1;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.calendar, .time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 18px;
+    color: #df4646;
+    margin-bottom: 5px;
+}
+
+.dropdown {
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 2px solid #df4646;
+    background-color: #fff;
+    color: #df4646;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 150px;
+}
+
+.dropdown:hover {
+    background-color: #ff9494;
+    color: #ffe3e1;
+    border-color: #ff9494;
+}
+
+.button {
+    padding: 6px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: "Courier";
+    background-color: #ffe3e1;
+    color: #e67373;
+    border-radius: 12px;
+    border: 2px solid #ffe3e1;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #ff9494;
+    color: #ffe3e1;
+    border: 2px solid #ff9494;
+}
+
