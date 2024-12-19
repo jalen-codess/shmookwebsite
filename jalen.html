@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jalen</title>
+    <link rel="stylesheet" href="css/final.css" />
+    <style>
+      body {
+        text-align: center;
+        margin-top: 30px;
+        font-family: "Courier";
+        background-color: #59c085;
+        color: #df4646;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #valentineQuestion {
+        font-size: 50px;
+        margin-bottom: 10px;
+      }
+
+      .answerButton {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        margin: 10px;
+        font-family: "Courier";
+        margin-bottom: 20px;
+        background-color: #c9f4ce;
+        color: #e67373;
+        border-radius: 12px;
+        border: 2px solid #df4646;
+        box-shadow: 1px 1px 2px #ff9494;
+        transition: 0.3s;
+      }
+
+      .answerButton:hover {
+        background-color: #df4646;
+        color: #e4a3a3;
+        border: 2px solid #df4646;
+        box-shadow: 1px 1px 2px #ffe3e1;
+      }
+
+      img {
+        max-width: 100%; /* Ensures the image scales properly */
+        height: auto; /* Maintains the aspect ratio */
+        margin-top: 20px;
+        border-radius: 10px; /* Optional styling for rounded corners */
+      }
+    </style>
+
+        <!-- Background Audio -->
+        <audio id="backgroundMusic" autoplay loop>
+            <source src="daddy.mp3" type="audio/mpeg" />
+            <source src="background-music.ogg" type="audio/ogg" />
+            Your browser does not support the audio element.
+          </audio>
+
+          <script>
+                  // Control audio volume for background music
+      const audio = document.getElementById("backgroundMusic");
+      audio.muted = false;
+      audio.volume = 0.2;
+          </script>
+  </head>
+  <body>
+    <div id="valentineQuestion"><b>Quick! Take a look at your shmook!</b></div>
+    <button class="answerButton" onclick="location.href='shmook.html'">
+      Go next I guess...
+    </button>
+    <img src="hello.png" alt="A sweet moment" />
+  </body>
+</html>

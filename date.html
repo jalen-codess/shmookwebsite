@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Calendar with Time</title>
+  <link rel="stylesheet" href="css/date.css" />
+</head>
+<body>
+  <h1>When are you free...</h1>
+  <form class="form-group">
+    <div class="calendar">
+      <!-- Month Dropdown -->
+      <label for="month">Month:</label>
+      <select id="month" class="dropdown"></select>
+
+      <!-- Day Dropdown -->
+      <label for="day">Day:</label>
+      <select id="day" class="dropdown"></select>
+
+      <!-- Year Dropdown -->
+      <label for="year">Year:</label>
+      <select id="year" class="dropdown"></select>
+    </div>
+
+    <div class="time">
+      <label for="time">Time:</label>
+      <select id="time" class="dropdown"></select>
+    </div>
+
+    <button class="button" onclick="location.href='clothes.html'">
+        SUBMIT
+      </button>
+  </form>
+
+    <!-- Background Audio -->
+    <audio id="backgroundMusic" autoplay loop muted>
+        <source src="kahoot.mp3" type="audio/mpeg" />
+        <source src="background-music.ogg" type="audio/ogg" />
+        Your browser does not support the audio element.
+      </audio>
+  <script>
+    // Populate the Month Dropdown
+    const monthSelect = document.getElementById("month");
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    months.forEach((month, index) => {
+      const option = document.createElement("option");
+      option.value = index + 1;
+      option.textContent = month;
+      monthSelect.appendChild(option);
+    });
+
+    // Populate the Day Dropdown
+    const daySelect = document.getElementById("day");
+    function populateDays(month, year) {
+      const daysInMonth = new Date(year, month, 0).getDate();
+      daySelect.innerHTML = ""; // Clear existing options
+      for (let i = 1; i <= daysInMonth; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        daySelect.appendChild(option);
+      }
+    }
+
+    // Populate the Year Dropdown
+    const yearSelect = document.getElementById("year");
+    const currentYear = new Date().getFullYear();
+    for (let i = currentYear; i <= currentYear + 5; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent = i;
+      yearSelect.appendChild(option);
+    }
+
+// Populate the Time Dropdown (from 9:00 AM to 11:00 PM)
+const timeSelect = document.getElementById("time");
+for (let hour = 9; hour <= 23; hour++) {
+  for (let minute = 0; minute < 60; minute += 15) {
+    const option = document.createElement("option");
+    const formattedHour = hour > 12 ? hour - 12 : hour;
+    const period = hour >= 12 ? "PM" : "AM";
+    const formattedMinute = minute.toString().padStart(2, "0");
+    option.value = `${formattedHour}:${formattedMinute} ${period}`;
+    option.textContent = `${formattedHour}:${formattedMinute} ${period}`;
+    timeSelect.appendChild(option);
+  }
+}
+
+    // Update Days on Month or Year Change
+    monthSelect.addEventListener("change", () => {
+      populateDays(monthSelect.value, yearSelect.value);
+    });
+    yearSelect.addEventListener("change", () => {
+      populateDays(monthSelect.value, yearSelect.value);
+    });
+
+    // Initialize Dropdowns
+    monthSelect.value = new Date().getMonth() + 1;
+    yearSelect.value = currentYear;
+    populateDays(monthSelect.value, yearSelect.value);
+
+      // Control audio volume
+      const audio = document.getElementById("backgroundMusic");
+      audio.muted = false;
+      audio.volume = 0.1; 
+  </script>
+</body>
+</html>
+

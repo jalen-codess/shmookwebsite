@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine</title>
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <div id="valentineQuestion">
+      <b>Welcome to the invitation confirmation. Will you go on the Christmas date with me?</b>
+    </div>
+    <button class="answerButton" onclick="location.href='final.html'" id="yesButton">
+      Yes
+    </button>
+    <button class="answerButton" id="noButton">Hell nah you're stinky ¯_(ツ)_/¯</button>
+    <br />
+    <img src="jake.gif" alt="cat asking question" class="responsive" />
+
+    <!-- Background Audio -->
+    <audio id="backgroundMusic" autoplay loop muted>
+      <source src="christmas1.mp3" type="audio/mpeg" />
+      <source src="background-music.ogg" type="audio/ogg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Sound Effect -->
+    <audio id="clickSound">
+      <source src="no.mp3" type="audio/mpeg" />
+      <source src="click-sound.ogg" type="audio/ogg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      // "No" button increases font size of "Yes" button
+      document
+        .getElementById("noButton")
+        .addEventListener("click", function () {
+          var yesButton = document.getElementById("yesButton"); // Select the Yes button by ID
+          var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 10px
+
+          // Play click sound
+          const clickSound = document.getElementById("clickSound");
+          clickSound.currentTime = 0; // Reset to the beginning
+          clickSound.play();
+        });
+
+      // Control audio volume for background music
+      const audio = document.getElementById("backgroundMusic");
+      audio.muted = false;
+      audio.volume = 0.1;
+    </script>
+  </body>
+</html>
