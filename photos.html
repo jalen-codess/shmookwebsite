@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shmook memories.</title>
+    <link rel="stylesheet" href="css/gallery.css" />
+    <style>
+      body {
+        text-align: center;
+        margin-top: 30px;
+        font-family: "Courier", monospace; /* Keep the "Courier" font */
+        background-color: #f3e8f4; /* Soft lavender background */
+        color: #b28dce; /* Soft lavender purple for text */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: auto; /* Ensure no overflow issues */
+        margin: 0;
+        padding: 0;
+      }
+
+      #galleryTitle {
+        font-size: 45px;
+        margin-bottom: 20px;
+        color: #cfa9e2; /* Light pastel purple for the title */
+        font-family: "Courier", monospace; /* Ensure the title also uses "Courier" */
+      }
+
+      .nextPageButton {
+        padding: 15px 25px;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: "Courier", monospace; /* Keep the button font the same */
+        background-color: #d1b4e7; /* Soft pastel purple background for buttons */
+        color: #6b4f92; /* Muted dark purple for text */
+        border-radius: 12px;
+        border: 2px solid #d0a4e7; /* Slightly darker purple border */
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        transition: 0.3s;
+        margin-bottom: 20px;
+      }
+
+      .nextPageButton:hover {
+        background-color: #cfa9e2; /* Lighter pastel purple on hover */
+        color: #fff;
+        border: 2px solid #b28dce; /* Soft lavender border on hover */
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      #gallery {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      .galleryImage {
+        flex: 1; /* Ensures all images grow evenly */
+        max-width: 350px; /* Slightly larger images */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a cozy feel */
+      }
+    </style>
+
+    <!-- Background Audio -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="apo.mp3" type="audio/mpeg" />
+        <source src="background-music.ogg" type="audio/ogg" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Control audio volume for background music
+        const audio = document.getElementById("backgroundMusic");
+        audio.muted = false;
+        audio.volume = 0.2;
+    </script>
+
+  </head>
+  <body>
+    <div id="galleryTitle"><b>Thank you for being my girlfriend</b></div>
+    <button class="nextPageButton" onclick="location.href='index.html'">
+      Let's keep going?
+    </button>
+
+    <div id="gallery">
+      <img src="s1.png" alt="First image" class="galleryImage" />
+      <img src="s2.png" alt="Second image" class="galleryImage" />
+      <img src="s3.png" alt="Third image" class="galleryImage" />
+    </div>
+  </body>
+</html>
